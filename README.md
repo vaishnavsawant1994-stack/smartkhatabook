@@ -1,16 +1,35 @@
-# React + Vite
+# Smart Khatabook
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Project overview
 
-Currently, two official plugins are available:
+A digital khata-book interface for managing customer accounts, credit, payments, collections, purchases, transactions, reports, and business settings.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## What it contains
 
-## React Compiler
+- React and Vite frontend
+- Registration and login screens
+- Dashboard with shared sidebar navigation
+- Customer and add-customer screens
+- Credit, payment, shopping, and collection workflows
+- Transaction history and reports
+- Context, routes, services, and reusable components
+- A nested `khatabook2/` directory whose relationship to the root app should be documented
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Current status
 
-## Expanding the ESLint configuration
+The visible root application provides the frontend product structure. A production backend, durable financial/customer data store, authentication/session security, audit trail, backup/restore behavior, and automated tests are not established by the previous README.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Local development
+
+```bash
+npm install
+npm run dev
+```
+
+## Important boundary
+
+Do not use the application for real financial records until data integrity, access control, transaction correctness, backups, and recovery have been verified.
+
+## Recommended next work
+
+Clarify the purpose of `khatabook2/`, document the complete architecture, implement or connect secure persistence, and add tests for balances, payments, collections, permissions, and reporting totals.
