@@ -64,9 +64,6 @@ function Payment() {
 
   const loadPaymentPage = async () => {
     try {
-      setLoading(true);
-      setError("");
-
       const [customerData, paymentData, summaryData] = await Promise.all([
         getPaymentCustomers(),
         getPayments(),
