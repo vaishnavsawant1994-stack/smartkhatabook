@@ -73,9 +73,6 @@ function Credit() {
 
   const loadCreditPage = async () => {
     try {
-      setLoading(true);
-      setError("");
-
       const [supplierData, creditData, summaryData] = await Promise.all([
         getSupplierPurchases(),
         getCredits(),
