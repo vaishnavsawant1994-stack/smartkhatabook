@@ -64,9 +64,6 @@ function Payment() {
 
   const loadPaymentPage = async () => {
     try {
-      setLoading(true);
-      setError("");
-
       const [customerData, paymentData, summaryData] = await Promise.all([
         getPaymentCustomers(),
         getPayments(),
@@ -85,7 +82,7 @@ function Payment() {
   };
 
   useEffect(() => {
-    loadPaymentPage();
+    void Promise.resolve().then(loadPaymentPage);
   }, []);
 
   const selectedCustomer = useMemo(

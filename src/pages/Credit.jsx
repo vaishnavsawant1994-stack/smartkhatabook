@@ -73,9 +73,6 @@ function Credit() {
 
   const loadCreditPage = async () => {
     try {
-      setLoading(true);
-      setError("");
-
       const [supplierData, creditData, summaryData] = await Promise.all([
         getSupplierPurchases(),
         getCredits(),
@@ -94,7 +91,7 @@ function Credit() {
   };
 
   useEffect(() => {
-    loadCreditPage();
+    void Promise.resolve().then(loadCreditPage);
   }, []);
 
   const customerCount = useMemo(() => {

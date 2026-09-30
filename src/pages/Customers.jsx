@@ -13,7 +13,7 @@ function Customers() {
     const [selectedCustomer, setSelectedCustomer] = useState(null);
     const [transactions, setTransactions] = useState([]);
     const [searchTerm, setSearchTerm] = useState("");
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         fetchCustomers();
@@ -25,7 +25,7 @@ function Customers() {
         }
     }, [selectedCustomer]);
 
-    const fetchCustomers = async () => {
+    async function fetchCustomers() {
         try {
             const response = await getCustomers();
             setCustomers(response.data);
@@ -35,10 +35,9 @@ function Customers() {
         } catch (error) {
             console.log(error);
         }
-    };
+    }
 
-    const fetchCustomerTransactions = async (customerId) => {
-        setLoading(true);
+    async function fetchCustomerTransactions(customerId) {
         try {
             const response = await getCustomerTransactions(customerId);
             setTransactions(response.data || []);
@@ -47,7 +46,7 @@ function Customers() {
             setTransactions([]);
         }
         setLoading(false);
-    };
+    }
 
     const handleDelete = async (id, e) => {
         e.stopPropagation();
