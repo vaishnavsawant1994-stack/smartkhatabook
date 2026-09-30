@@ -91,7 +91,7 @@ function Credit() {
   };
 
   useEffect(() => {
-    loadCreditPage();
+    void Promise.resolve().then(loadCreditPage);
   }, []);
 
   const customerCount = useMemo(() => {
